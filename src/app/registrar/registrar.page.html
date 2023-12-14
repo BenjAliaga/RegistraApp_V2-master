@@ -1,0 +1,49 @@
+
+<ion-content [fullscreen]="true">
+  <!-- !Portada -->
+  
+  <div class="portada">
+    <!-- Backbutton -->
+    <ion-buttons class="back" slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- back -->
+    <div class="label">
+      <ion-label class="yellow">Registr</ion-label>
+      <ion-label class="blue">App</ion-label>
+    </div>
+  
+  <div class="label2">
+    <ion-label class="yellow">Duoc</ion-label>
+    <ion-label class="blue">UC</ion-label>
+    
+  </div>
+</div>
+  <!-- !Formulario -->
+  <div class="form">
+    <ion-label class="subtitulo">REGISTRAR</ion-label>
+     <form [formGroup]="formularioLogin" >
+      <!-- *Input Usuario -->
+      <ion-item lines="full">
+        
+        <ion-label class="texto" color="warning" position="floating">Nuevo Usuario</ion-label>
+        <ion-input formControlName="nombre" color="dark" type="text" required="" placeholder="Ingresar Nombre de Usuario" ></ion-input>
+      </ion-item>
+      <!-- *Input Contraseña -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating">Contraseña</ion-label>
+        <ion-input color="dark" formControlName="contrasena" type="password" required="" placeholder="Ingresar Contraseña" ></ion-input>
+      </ion-item>
+      <!-- *Input Contraseña confirmacion -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating">Confirmar Contraseña</ion-label>
+        <ion-input color="dark" formControlName="confirmar_contrasena" type="password" required="" placeholder="Ingresar Nuevamente la Contraseña" ></ion-input>
+      </ion-item>
+      <div class="button">
+        <ion-button id="open-loading" type="submit" shape="round" (click)="registrar()">Registrar</ion-button>
+      </div>
+    </form>
+    <!-- !LINKS -->
+    
+  </div>
+</ion-content>

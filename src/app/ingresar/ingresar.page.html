@@ -1,0 +1,60 @@
+<ion-content [fullscreen]="true">
+  <!-- !Portada -->
+  <div class="portada">
+    <div class="label">
+      <ion-label class="yellow">Registr</ion-label>
+      <ion-label class="blue">App</ion-label>
+    </div>
+
+    <div class="label2">
+      <ion-label class="yellow">Duoc</ion-label>
+      <ion-label class="blue">UC</ion-label>
+    </div>
+  </div>
+  <!-- !Formulario -->
+  <div class="form">
+    <ion-label class="subtitulo">INGRESAR</ion-label>
+    <form [formGroup]="formularioLogin">
+      <!-- *Input Usuario -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating"
+          >Usuario</ion-label
+        >
+        <ion-input
+          formControlName="nombre"
+          color="dark"
+          type="text"
+          required=""
+          placeholder="Ingresar Usuario"
+        ></ion-input>
+      </ion-item>
+      <!-- *Input Contraseña -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating"
+          >Contraseña</ion-label
+        >
+        <ion-input
+          color="dark"
+          formControlName="contrasena"
+          type="password"
+          required=""
+          placeholder="Ingresar Contraseña"
+        ></ion-input>
+      </ion-item>
+      <div class="button">
+        <ion-button
+          id="open-loading"
+          type="submit"
+          shape="round"
+          (click)="ingresar()"
+          >Ingresar</ion-button
+        >
+      </div>
+    </form>
+    <!-- !LINKS -->
+    <div class="links">
+      <a href="recuperar">Olvide mi contraseña</a>
+      <a href="registrar">Registrar</a>
+    </div>
+  </div>
+</ion-content>

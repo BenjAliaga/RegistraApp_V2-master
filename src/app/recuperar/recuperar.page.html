@@ -1,0 +1,47 @@
+
+<ion-content [fullscreen]="true">
+  <!-- !Portada -->
+  <div class="portada">
+    <!-- Backbutton -->
+    <ion-buttons class="back" slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- back -->
+    <div class="label">
+      <ion-label class="yellow">Registr</ion-label>
+      <ion-label class="blue">App</ion-label>
+    </div>
+  
+  <div class="label2">
+    <ion-label class="yellow">Duoc</ion-label>
+    <ion-label class="blue">UC</ion-label>
+    
+  </div>
+</div>
+  <!-- !Formulario -->
+  <div class="form">
+    <ion-label class="subtitulo">RECUPERAR CONTRASEÑA</ion-label>
+     <form  >
+      <!-- *Input Usuario -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating">Numero Telefono</ion-label>
+        <ion-input  color="dark" type="text" required="" placeholder="Ingresar Numero de telefono" ></ion-input>
+      </ion-item>
+      <!-- *Nueva Contraseña -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating">Nueva Contraseña</ion-label>
+        <ion-input color="dark"  type="password" required="" placeholder="Ingresar Nueva Contraseña" ></ion-input>
+      </ion-item>
+      <!-- *Confirmar Contraseña -->
+      <ion-item lines="full">
+        <ion-label class="texto" color="warning" position="floating">Confirmar Contraseña</ion-label>
+        <ion-input color="dark"  type="password" required="" placeholder="Ingrese Nuevamente la Contraseña" ></ion-input>
+      </ion-item>
+      <div class="button">
+        <ion-button id="open-loading" type="submit" shape="round" href="ingresar">Recuperar</ion-button>
+      </div>
+    </form>
+    <!-- !LINKS -->
+    
+  </div>
+</ion-content>

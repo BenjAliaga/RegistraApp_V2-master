@@ -1,0 +1,62 @@
+<ion-content [fullscreen]="true">
+  <!-- !Portada -->
+  <div class="portada">
+    <!-- !menubutton -->
+    <ion-buttons size="xx-large" class="menub" slot="end">
+      <ion-menu-button size="xx-large"></ion-menu-button>
+    </ion-buttons>
+    <!-- Backbutton -->
+    <ion-buttons class="back" slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <!-- back -->
+    <div class="label">
+      <ion-label class="yellow">Registr</ion-label>
+      <ion-label class="blue">App</ion-label>
+    </div>
+
+    <div class="label2">
+      <ion-label class="yellow">Duoc</ion-label>
+      <ion-label class="blue">UC</ion-label>
+    </div>
+  </div>
+
+
+  <!-- *BODY -->
+  
+  <ion-list>
+    <ion-item *ngFor="let barcode of barcodes">
+      <ion-label position="stacked">{{ barcode.format }}</ion-label>
+      <ion-input type="text" [value]="barcode.rawValue"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="scan()" [disabled]="!isSupported">
+      <ion-icon name="scan"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- !TAB-BAR -->
+  <!-- <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home" [routerLink]="['/home']" >
+        <ion-icon  ios="home" md="home" ></ion-icon>
+        Home
+      </ion-tab-button>
+      <ion-tab-button tab="camera"  class="selected">
+        <ion-icon ios="camera" md="camera"></ion-icon>
+        QR
+      </ion-tab-button>
+      <ion-tab-button tab="calendar" [routerLink]="['/calendar']">
+        <ion-icon ios="calendar" md="calendar"></ion-icon>
+        Horario
+      </ion-tab-button>
+
+      !para agregar mas
+      <ion-tab-button tab="search">
+        <ion-icon name="search"></ion-icon>
+        name
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs> -->
+</ion-content>

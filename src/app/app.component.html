@@ -1,0 +1,91 @@
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu side="end" contentId="main-content" type="reveal">
+      <ion-content>
+        <ion-list lines="none" id="inbox-list">
+          <ion-list-header
+            ><div class="portada">
+              <div class="label">
+                <ion-label class="yellow">Registr</ion-label>
+                <ion-label class="blue">App</ion-label>
+              </div>
+
+              <div class="label2">
+                <ion-label class="yellow">Duoc</ion-label>
+                <ion-label class="blue">UC</ion-label>
+              </div>
+            </div></ion-list-header
+          >
+          <ion-note>{{ nombreUsuario }}</ion-note>
+
+          <ion-menu-toggle
+            lines="none"
+            auto-hide="false"
+            *ngFor="let p of appPages; let i = index"
+          >
+            <ion-item
+              lines="none"
+              routerDirection="root"
+              [routerLink]="[p.url]"
+              lines="none"
+              detail="false"
+              routerLinkActive="selected"
+            >
+              <ion-icon
+                aria-hidden="true"
+                slot="start"
+                [ios]="p.icon + '-outline'"
+                [md]="p.icon + '-sharp'"
+              ></ion-icon>
+              <ion-label>{{ p.title }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- !ENLASE DUOC -->
+        <a href="https://www.duoc.cl/">
+        <ion-item lines="none">
+          <ion-icon slot="start" ios="school" md="school"></ion-icon>
+          <ion-label>DuocUc</ion-label>
+        </ion-item>
+        </a>
+        <!-- !CORREO -->
+        <a href="https://mail.google.com/">
+        <ion-item lines="none">
+          <ion-icon slot="start" ios="mail" md="mail"></ion-icon>
+          <ion-label>Correo</ion-label>
+        </ion-item>
+        </a>
+
+        <!-- !COMPARTIR -->
+        <ion-item (click)="compartirApp()" lines="none">
+          <ion-icon
+            slot="start"
+            ios="share-social"
+            md="share-social"
+          ></ion-icon>
+          <ion-label>Compartir</ion-label>
+        </ion-item>
+
+        <!-- !MAPA -->
+        <ion-item lines="none">
+          <ion-icon slot="start" ios="map" md="map"></ion-icon>
+          <ion-label>Ubicacion Duoc</ion-label>
+        </ion-item>
+        <div class="map">
+          <ion-content>
+            <div id="map"></div>
+          </ion-content>
+        </div>
+
+        <!-- !CERRAR SESION -->
+        <ion-item id="present-alert"  lines="none">
+          <ion-icon slot="start" ios="exit" md="exit"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+          <ion-alert trigger="present-alert" class="custom-alert" header="¿Seguro que quiere salir?" [buttons]="alertButtons"></ion-alert>
+        </ion-item>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
